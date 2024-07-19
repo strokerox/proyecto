@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Estudiantes</title>
+</head>
+<body>
+<div id="header">
+<ul class="nav">
+<li><a href="#">Entradas</a>
+<ul>
+<li><a href="respaldar.php">Alumnos</a></li>
+<li><a href="#">Bienvenido</a></li>
+<li><a href="#" onclick="cerrarPrograma()">Salir</a></li>
+</ul>
+</li>
+
+<li><a href="#">Procesos</a>
+<ul>
+<li><a href="extraer_datos.php">Extraer Datos</a></li>
+<li><a href="guardar_estudiante.php">Guardar Estudiante</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<script type="text/javascript">
+function cerrarPrograma() {
+if (confirm("¿Está seguro de que desea salir?")) {
+window.close();
+}
+}
+</script>
+
+<style type="text/css">
+* {
+margin: 0px;
+padding: 0px;
+}
+
+#header {
+margin: auto;
+width: 900px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+list-style: none;
+}
+
+.nav > li {
+float: left;
+}
+
+.nav li a {
+background-color: #000;
+color: #fff;
+text-decoration: none;
+padding: 10px 12px;
+display: block;
+}
+
+.nav li a:hover {
+background-color: #434343;
+}
+
+.nav li ul {
+display: none;
+position: absolute;
+min-width: 140px;
+}
+
+.nav li:hover > ul {
+display: block;
+}
+
+.nav li ul li {
+position: relative;
+}
+
+.nav li ul li ul {
+right: -140px;
+top: 0px;
+}
+
+form {
+margin-top: 50px;
+}
+</style>
+<fieldset><h1>Registro de Estudiantes</h1>
+<form action="guardar_estudiante.php" method="post">
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required><br><br>
+
+<label for="apellido">Apellido:</label>
+<input type="text" id="apellido" name="apellido" required><br><br>
+
+<label for="identificacion">Número de Identificación:</label>
+<input type="text" id="identificacion" name="identificacion" required><br><br>
+
+<label for="carrera">Carrera en Estudio:</label>
+<input type="text" id="carrera" name="carrera" required><br><br>
+
+<label for="nota">Nota:</label>
+<input type="number" id="nota" name="nota" min="0" max="100" required><br><br>
+
+<label for="telefono">Teléfono:</label>
+<input type="text" id="telefono" name="telefono" required><br><br>
+
+<input type="submit" value="Registrar">
+</fieldset>
+</form>
+</body>
+</html>
